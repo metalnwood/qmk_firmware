@@ -10,7 +10,8 @@ enum {
 	_NUMPAD,
 	_ARROWRGB,
 	_WM,
-	_MEDIA
+	_MEDIA,
+  _DCS
 };
 /* enum layer_number { */
 /*   _COLEMAK = 0, */
@@ -25,12 +26,13 @@ enum {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_DVORAK] = LAYOUT(
-        S(KC_GRV)/* KC_TILD  */,     KC_KP_PLUS,        KC_LCBR, KC_LBRC,    KC_LPRN,    KC_PERC,                           KC_CIRC,    KC_RPRN,    KC_RBRC,    KC_RBRC,    KC_PLUS,    KC_BSPC,
+
+  KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
         LT(_NUMPAD, KC_TAB),    KC_SCLN,    KC_COMM,    KC_DOT,    KC_P,    KC_Y,                     KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_BSPC,
 
         LT(_ARROWRGB,KC_ESC), LGUI_T(KC_A), LALT_T(KC_O), LCTL_T(KC_E), LSFT_T(KC_U), KC_I, KC_D, RSFT_T(KC_H), RCTL_T(KC_T), RALT_T(KC_N), RGUI_T(KC_S), KC_MINS,
 
-        KC_LSFT,    KC_QUOTE,    KC_Q,    KC_J,    KC_K,    KC_X, TO(_QWERTY), KC_SLSH, KC_B,    KC_M, KC_W,  KC_V, KC_Z,  KC_RSFT,
+        KC_LSFT,    KC_QUOTE,    KC_Q,    KC_J,    KC_K,    KC_X, TO(_QWERTY), TO(_DCS), KC_B,    KC_M, KC_W,  KC_V, KC_Z,  KC_RSFT,
         KC_NO,      LT(_NUMPAD, KC_CAPS),   LT(_NUMPAD,KC_BSPC),  LT(_NUMROW,KC_BSPC),                LT(_NUMROW,KC_SPC),   LT(_WM	,KC_ENT), MO(_MEDIA), KC_NO),
 
 	[_COLEMAK] = LAYOUT(
@@ -44,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  [_QWERTY] = LAYOUT(
   KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_GRV,
   KC_TAB,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINS,
-  KC_LCTRL, KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+  KC_LCTL, KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
   KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, TO(_DVORAK), KC_RBRC,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_RSFT,
                         KC_LALT, KC_LGUI, MO(_SYMBOL), KC_SPC, KC_ENT, MO(_SYMBOL), KC_BSPC, KC_RGUI
 ),
@@ -119,7 +121,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                        KC_NO,     KC_LGUI, _______,  KC_SPC,     KC_ENT, _______, KC_RALT, KC_NO
                                       //`--------------------------'  `--------------------------'
-  )
+  ),
+
+	[_DCS] = LAYOUT(
+        KC_GRV, KC_KP_PLUS, KC_LCBR, KC_LBRC, KC_LPRN, KC_PERC,                           KC_CIRC,   LCTL(KC_1), LCTL(KC_2), LCTL(KC_3), LCTL(KC_4), LCTL(KC_5),
+        KC_TAB, KC_SCLN, KC_COMM, KC_DOT, KC_P, KC_Y,                                     LCTL(LALT(KC_0)), LCTL(LALT(KC_1)),LCTL(LALT(KC_2)),LCTL(LALT(KC_3)),LCTL(LALT(KC_0)), LCTL(LALT(KC_BSPC)),
+
+       KC_ESC, KC_A, KC_O, KC_E, KC_U, KC_I,                                             LCTL(KC_T), LCTL(LALT(KC_4)),LCTL(LALT(KC_5)),LCTL(LALT(KC_6)),LCTL(LALT(KC_0)), KC_MINS,
+
+        KC_LSFT,    KC_QUOTE,    KC_Q,    KC_J,    KC_K,    KC_X, TO(_QWERTY),            TO(_DVORAK), LCTL(LALT(KC_0)), LCTL(LALT(KC_7)),LCTL(LALT(KC_8)),LCTL(LALT(KC_9)),LCTL(LALT(KC_0)), LCTL(KC_O),
+        KC_NO,      LT(_NUMPAD, KC_CAPS),   LT(_NUMPAD,KC_BSPC),  LT(_NUMROW,KC_BSPC),               TO(_DVORAK), LCTL(LALT(KC_KP_ENTER)),LCTL(LALT(KC_BSPC)), LCTL(LALT(KC_0))
+        )
 };
 //layer_state_t layer_state_set_user(layer_state_t state) {
 //  return update_tri_layer_state(state, _MEDIA, _SYMBOL, _NUMPAD, _ARROWS, _XMONAD);
