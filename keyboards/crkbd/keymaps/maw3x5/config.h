@@ -45,4 +45,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
 #define COMBO_TERM 12
-#define COMBO_ONLY_FROM_LAYER 0
