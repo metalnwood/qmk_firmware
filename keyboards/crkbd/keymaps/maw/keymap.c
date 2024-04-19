@@ -38,6 +38,7 @@ int num_word = 0;
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_DVORAK] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+<<<<<<< HEAD
                                  KC_TAB,    KC_SCLN,    KC_COMM,    KC_DOT,    KC_P,    KC_Y,                         KC_F,    KC_G,    KC_C,    KC_R, KC_L,  KC_NO,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       LT(_ARROWRGB,KC_ESC), LGUI_T(KC_A), LALT_T(KC_O), LCTL_T(KC_E), LSFT_T(KC_U), LT(_NUMPAD,KC_I), LT(_NUMPAD,KC_D), RSFT_T(KC_H), RCTL_T(KC_T), RALT_T(KC_N), RGUI_T(KC_S), KC_MINS,
@@ -45,6 +46,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TILDE, KC_QUOT   ,    KC_Q,    KC_J,    LT(_NUMPAD,KC_K),    KC_X,                         KC_B,    KC_M, KC_W,  KC_V, KC_Z,  KC_SLSH,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                            KC_CAPS,  LT(_NUMPAD, LSFT(KC_COLN)),  LT(_SYMBOLS,KC_SPC), LT(_SYMBOLS,KC_SPC),   LT(_WM	,KC_ENT), MO(_MEDIA)
+=======
+                                 KC_TAB,    KC_SCLN,    KC_COMM,    KC_DOT,    KC_P,    KC_Y,                         KC_F,    KC_G,    KC_C,    KC_R, KC_L,  KC_BSPC,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      LT(_ARROWRGB,KC_ESC), LGUI_T(KC_A), LALT_T(KC_O), LCTL_T(KC_E), LSFT_T(KC_U), LT(_NUMPAD,KC_I), LT(_NUMPAD,KC_D), RSFT_T(KC_H), RCTL_T(KC_T), RALT_T(KC_N), RGUI_T(KC_S), KC_MINS,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      KC_TILDE, KC_QUOT   ,    KC_Q,    KC_J,    KC_K,    KC_X,                         KC_B,    KC_M, KC_W,  KC_V, KC_Z,  KC_SLSH,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                           KC_CAPS,   LSFT(KC_COLN),  LT(_SYMBOLS,KC_SPC), LT(_SYMBOLS,KC_SPC),   LT(_WM	,KC_ENT), MO(_MEDIA)
+>>>>>>> 4ea0c0cd91e897dc8f2d54883f9a7bac4af69f25
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -74,6 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   ),
   // numrow
+<<<<<<< HEAD
  // [_SYMBOLS] = LAYOUT_split_3x6_3(
  //  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
  //     KC_GRV, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC,                          KC_CIRC, KC_AMPR, KC_ASTR, KC_EQL, KC_KP_PLUS, KC_BSPC,
@@ -93,6 +104,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_GRV, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC,                          KC_CIRC, KC_AMPR, KC_ASTR, KC_EQL, KC_KP_PLUS, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    --------+--------+--------+--------+--------+--------|
       KC_NO, KC_DQUO, KC_COLN,   KC_LBRC,KC_RBRC,KC_LT ,                             KC_GT, KC_LPRN, KC_RPRN,  KC_UNDS,KC_QUES, KC_NO,
+=======
+ [_SYMBOLS] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+     KC_GRV, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC,                          KC_CIRC, KC_AMPR, KC_ASTR, KC_EQL, KC_KP_PLUS, KC_BSPC,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+     KC_DOT, KC_1, LALT_T(KC_2),LCTL_T( KC_3),LSFT_T(KC_4),KC_5,         KC_6,     RSFT_T(KC_7),   RCTL_T( KC_8), RALT_T(KC_9),   KC_0,    KC_UNDS,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+     LSFT_T(KC_TILD),   KC_DQUO, KC_COLN,   KC_LBRC,KC_RBRC, KC_LCBR,            KC_RCBR, KC_LPRN, KC_RPRN,  KC_UNDS,KC_PIPE, RSFT_T(KC_BSLS),
+>>>>>>> 4ea0c0cd91e897dc8f2d54883f9a7bac4af69f25
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                            KC_LT, KC_GT,  KC_SPC,     KC_SPC,   KC_ENT, XXXXXXX
                                       //`--------------------------'  `--------------------------'
@@ -301,6 +321,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 
 enum combo_events {
+<<<<<<< HEAD
     CAPS_COMBO,
       /* ESCAPE_COMBO, */
       /* ENTER_COMBO, */
@@ -321,22 +342,46 @@ const uint16_t PROGMEM return_combo[] = {KC_M, KC_W, COMBO_END};
 const uint16_t PROGMEM bspc2_combo[] = {KC_C, KC_R, COMBO_END};
 const uint16_t PROGMEM tab_combo[] = {KC_COMM,    KC_DOT, COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {LALT_T(KC_O), LCTL_T(KC_E), LSFT_T(KC_U),COMBO_END};
+=======
+  CAPS_COMBO,
+  /* ESCAPE_COMBO, */
+  /* ENTER_COMBO, */
+  NUMWORD_COMBO,
+  ONESHOT_SHIFT_COMBO,
+};
+
+const uint16_t PROGMEM caps_lock_combo[] = {KC_M, KC_W, COMBO_END};
+/* const uint16_t PROGMEM escape_combo[] = {KC_C, KC_G, COMBO_END}; */
+/* const uint16_t PROGMEM enter_combo[] = {KC_C, KC_G, COMBO_END}; */
+const uint16_t PROGMEM num_word_combo[] = {KC_C, KC_G, COMBO_END};
+>>>>>>> 4ea0c0cd91e897dc8f2d54883f9a7bac4af69f25
 /* const uint16_t PROGMEM num_word_combo[] = {LSFT_T(KC_U),  LCTL_T(KC_E), COMBO_END}; */
 const uint16_t PROGMEM oneshot_shift_combo[]= {RSFT_T(KC_H),  RCTL_T(KC_T), COMBO_END};
 
 combo_t key_combos[] = {
   [CAPS_COMBO] = COMBO_ACTION(caps_lock_combo),
+<<<<<<< HEAD
   [NUMWORD_COMBO] = COMBO_ACTION(num_word_combo),
   [ONESHOT_SHIFT_COMBO] = COMBO_ACTION(oneshot_shift_combo),
   [RETURN_COMBO] = COMBO_ACTION(return_combo),
   [BSPC2_COMBO] = COMBO_ACTION(bspc2_combo),
   [ESC_COMBO] = COMBO_ACTION(esc_combo),
   [TAB_COMBO] = COMBO_ACTION(tab_combo),
+=======
+  /* [ESCAPE_COMBO] = COMBO_ACTION(escape_combo), */
+  /* [ENTER_COMBO] = COMBO_ACTION(enter_combo), */
+  [NUMWORD_COMBO] = COMBO_ACTION(num_word_combo),
+  [ONESHOT_SHIFT_COMBO] = COMBO_ACTION(oneshot_shift_combo),
+>>>>>>> 4ea0c0cd91e897dc8f2d54883f9a7bac4af69f25
 };
 /* COMBO_ACTION(x) is same as COMBO(x, KC_NO) */
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
+<<<<<<< HEAD
 //  int32_t  elapsed;
+=======
+  /* int32_t  elapsed; */
+>>>>>>> 4ea0c0cd91e897dc8f2d54883f9a7bac4af69f25
 
    switch(combo_index) {
     case CAPS_COMBO:
@@ -344,6 +389,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
         caps_word_on();
       }
       break;
+<<<<<<< HEAD
     case TAB_COMBO:
       if (pressed) {
                 tap_code16(KC_TAB);
@@ -354,6 +400,8 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
                 tap_code16(KC_ESC);
       }
       break;
+=======
+>>>>>>> 4ea0c0cd91e897dc8f2d54883f9a7bac4af69f25
     /* case ESCAPE_COMBO: */
     /*   if (pressed) { */
     /*     tap_code16(KC_ESC); */
@@ -362,7 +410,11 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
     case NUMWORD_COMBO:
       if (pressed){
         num_word = 1;
+<<<<<<< HEAD
         layer_move(_NUMPAD);
+=======
+        layer_move(_NUMWORD);
+>>>>>>> 4ea0c0cd91e897dc8f2d54883f9a7bac4af69f25
         break;
       }
     case ONESHOT_SHIFT_COMBO:
@@ -370,6 +422,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
         set_oneshot_mods(MOD_BIT(KC_LEFT_SHIFT));
       }
       break;
+<<<<<<< HEAD
 
 
     case BSPC2_COMBO:
@@ -384,6 +437,8 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 
         }
         break;
+=======
+>>>>>>> 4ea0c0cd91e897dc8f2d54883f9a7bac4af69f25
     /* case ENTER_COMBO: */
     /*   if (pressed) { */
 
