@@ -44,8 +44,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
-#define COMBO_TERM 12
-<<<<<<< HEAD
+#define COMBO_TERM 35
 #define COMBO_ONLY_FROM_LAYER 0
-=======
->>>>>>> 4ea0c0cd91e897dc8f2d54883f9a7bac4af69f25
