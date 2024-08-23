@@ -1,0 +1,5 @@
+#define TAPPING_FORCE_HOLD
+#define TAPPING_TERM 150
+
+#define COMBO_TERM 35
+#define COMBO_ONLY_FROM_LAYER 0
